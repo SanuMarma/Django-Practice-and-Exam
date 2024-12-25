@@ -1,0 +1,40 @@
+{% extends 'base.html' %} {% block content %}
+
+<h1 class="mt-5 mb-5" style="text-align: center">This is Model Field</h1>
+{% if data %}
+<table class="table table-bordered" style="width: auto; margin: auto">
+  <thead>
+    <tr>
+      <th scope="col">Roll</th>
+      <th scope="col">Name</th>
+      <th scope="col">Address</th>
+      <th scope="col">Email</th>
+      <th scope="col">File</th>
+      <th scope="col">Image</th>
+      <th scope="col">Url field</th>
+      <th scope="col">Date field</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for st in data %}
+    <tr>
+      <td>{{st.roll}}</td>
+      <td>{{st.name}}</td>
+      <td>{{st.address}}</td>
+      <td>{{st.email}}</td>
+      <td>{{st.file_field}}</td>
+      <td>{{st.image_field}}</td>
+      <td>{{st.url_field}}</td>
+      <td>{{st.date_field}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% else %}
+<h3>No data available to show</h3>
+{% endif %}
+
+<!-- </form> -->
+
+{% endblock %}
